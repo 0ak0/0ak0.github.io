@@ -22,7 +22,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("res/backgrounds/2.png");
+    background-image: url("res/backgrounds/2.webp");
     background-size: cover;
     transform : scale(1.05);
     background-position: center;
@@ -33,19 +33,19 @@
 }
 
 .cover-bgimage.work {
-    background-image: url("res/backgrounds/2.png");
+    background-image: url("res/backgrounds/2.webp");
 }
 
 .cover-bgimage.about {
-    background-image: url("res/backgrounds/2.png");
+    background-image: url("res/backgrounds/1.webp");
 }
 
 .cover-bgimage.contact {
-    background-image: url("res/backgrounds/2.png");
+    background-image: url("res/backgrounds/2.webp");
 }
 
 .cover-bgimage.links {
-    background-image: url("res/backgrounds/2.png");
+    background-image: url("res/backgrounds/2.webp");
 }
 
 .cover-leaf {
