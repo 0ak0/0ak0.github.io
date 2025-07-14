@@ -22,7 +22,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("res/coverbg.png");
+    background-image: url("res/backgrounds/2.png");
     background-size: cover;
     transform : scale(1.05);
     background-position: center;
@@ -30,6 +30,22 @@
     filter: blur(10px);
     -webkit-filter: blur(10px);
     z-index: 2;
+}
+
+.cover-bgimage.work {
+    background-image: url("res/backgrounds/2.png");
+}
+
+.cover-bgimage.about {
+    background-image: url("res/backgrounds/2.png");
+}
+
+.cover-bgimage.contact {
+    background-image: url("res/backgrounds/2.png");
+}
+
+.cover-bgimage.links {
+    background-image: url("res/backgrounds/2.png");
 }
 
 .cover-leaf {
@@ -127,14 +143,88 @@ hr {
     margin: var(--link-list-margins);
 }
 
-.link-list.active {
-    background-color: var(--selected-nav-color);
-}
-
-.link-list.active:hover {
+.link-list.active, .link-list.active:hover {
     background-color: var(--selected-nav-color);
 }
 
 .column-text {
     margin: 15px 300px;
+}
+
+.portfolio-section {
+  display: grid;
+  flex-wrap: wrap;
+  gap: 25px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card {
+  width: 450px;
+  border: 3px outset rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgb(43, 43, 43,.3);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card a {
+    color: white;
+    text-decoration: none;
+}
+
+.card:hover {
+    background: rgb(10, 10, 10,.75);
+    transition: background 0.3s;
+}
+
+.card:hover h3{
+    text-decoration: underline 3px;
+}
+
+.carousel {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.carousel-image {
+  display: none;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.carousel-image.active {
+  display: block;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.prev:hover, .next:hover {
+    background: white;
+    color: black;
+    transition: all 0.3s;
+}
+
+.prev { 
+    left: 5px; 
+}
+
+.next { 
+    right: 5px; 
+}
+
+.card-content {
+  padding: 16px;
 }

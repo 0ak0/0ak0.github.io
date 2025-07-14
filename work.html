@@ -17,10 +17,11 @@
 
     </head>
     <body class="cover">
-        <div class="cover-bgimage"></div>
+        <div class="cover-bgimage work"></div>
         <div class="cover-bgdarken"></div>
         <div class="cover-text">
             <h1>Projects and Work</h1>
+            <p>Images and Individual Pages still Work In Progress</p>
             <ul class="link-list">
                 <li><a href="about.html">About</a></li>
                 <li class="link-list active"><a href="#">Projects and Work</a></li>
@@ -28,16 +29,104 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="column-text">
-                <p>Work in progress section.</p>
+                <section class="portfolio-section">
+                    <div class="card">
+                        <div class="carousel">
+                        <img src="res/img1.jpg" class="carousel-image active">
+                        <img src="res/img2.jpg" class="carousel-image">
+                        <img src="res/img3.jpg" class="carousel-image">
+                        <button class="prev">&#10094;</button>
+                        <button class="next">&#10095;</button>
+                        </div>
+                        <div class="card-content">
+                        <a href="works/shiver/shiver.html"><h3>Shiver</h3></a>
+                        <p>A horror game set in the Antarctic. Level designer, modeller, and programmer.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="carousel">
+                        <img src="works/ue5/images/canyon1.png" class="carousel-image active">
+                        <img src="works/ue5/images/canyon4.png" class="carousel-image">
+                        <img src="works/ue5/images/canyon3.png" class="carousel-image">
+                        <button class="prev">&#10094;</button>
+                        <button class="next">&#10095;</button>
+                        </div>
+                        <div class="card-content">
+                        <a href="works/ue5/ue5.html"><h3>UE5 Work</h3></a>
+                        <p>Here you can find examples of works I have done in Unreal Engine 5.</p>
+                        </div>
+                    </div>
+             
+                    <div class="card">
+                        <div class="carousel">
+                        <img src="res/img1.jpg" class="carousel-image active">
+                        <img src="res/img2.jpg" class="carousel-image">
+                        <img src="res/img3.jpg" class="carousel-image">
+                        <button class="prev">&#10094;</button>
+                        <button class="next">&#10095;</button>
+                        </div>
+                        <div class="card-content">
+                        <a href="works/u3dvr/u3dvr.html"><h3>Unity3D VR Work</h3></a>
+                        <p>Detailing the porting of a university project into Virtual Reality.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="carousel">
+                        <img src="res/img1.jpg" class="carousel-image active">
+                        <img src="res/img2.jpg" class="carousel-image">
+                        <img src="res/img3.jpg" class="carousel-image">
+                        <button class="prev">&#10094;</button>
+                        <button class="next">&#10095;</button>
+                        </div>
+                        <div class="card-content">
+                        <a href="works/models/models.html"><h3>Modelling Work</h3></a>
+                        <p>Here you can find examples of 3D models I have made.</p>
+                        </div>
+                    </div>
+
+                </section>
             </div>
             
             
         </div>
-        <a href="main.html">
+        <a href="/index.html">
             <img src="res/leaftrans.png" 
             style="position: fixed; bottom: 0; right: 0; width: 100px; margin-bottom: 25px; margin-right: 10px;" 
             class="cover-leaf" 
             alt="a leaf.">
         </a>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.card').forEach(card => {
+            const images = card.querySelectorAll('.carousel-image');
+            const prev = card.querySelector('.prev');
+            const next = card.querySelector('.next');
+            let index = 0;
+
+            function showImage(i) {
+                images.forEach((img, idx) => {
+                img.classList.toggle('active', idx === i);
+                });
+            }
+
+            prev.addEventListener('click', () => {
+                index = (index - 1 + images.length) % images.length;
+                showImage(index);
+            });
+
+            next.addEventListener('click', () => {
+                index = (index + 1) % images.length;
+                showImage(index);
+            });
+
+            showImage(index); // Initialize
+            });
+        });
+        </script>
+        
+
     </body>
 </html>
