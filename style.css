@@ -86,10 +86,11 @@
 }
 
 .cover-subtitle {
-    max-width: min(60vw, 900px);
+    max-width: min(70vw, 1050px);
     margin-left: auto;
     margin-right: auto;
     text-wrap: balance;
+    font-size: 1.5rem;
 }
 
 .cover-bgdarken {
