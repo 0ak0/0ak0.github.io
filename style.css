@@ -450,7 +450,7 @@ code a {
     transform: scale(1.06);
 }
 
-.gallery-item::after, .project-header-media a::after {
+.gallery-item::after, .project-header-media a::after, .portfolio-item > a::after {
     content: "";
     position: absolute;
     bottom: 8px;
@@ -469,7 +469,7 @@ code a {
     z-index: 2;
 }
 
-.gallery-item:hover::after, .project-header-media a:hover::after {
+.gallery-item:hover::after, .project-header-media a:hover::after, .portfolio-item > a:hover::after {
     opacity: 0.95;
     transform: scale(1.1);
 }
@@ -553,4 +553,122 @@ code a {
         right: 15px;
         font-size: 1.8rem;
     }
+}
+/* projects and work page */
+
+.work-heading {
+    margin: 10px 0 16px;
+    text-align: left;
+}
+
+.writeup-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.writeup-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(43, 43, 43, 0.3);
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.writeup-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.writeup-card:hover h3 {
+    text-decoration: underline 3px;
+}
+
+.writeup-card img {
+    width: 120px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.writeup-text h3 {
+    margin: 0 0 4px;
+}
+
+.writeup-text p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px 16px;
+}
+
+.portfolio-item {
+    margin: 0;
+}
+
+.portfolio-item > a {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 10px;
+    border: var(--image-border);
+    cursor: zoom-in;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item > a:hover img {
+    transform: scale(1.04);
+}
+
+.portfolio-item figcaption {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    text-align: left;
+    opacity: 0.85;
+    font-weight: 500;
+    text-shadow: none;
+}
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 80vw;
+    margin: 0;
+    color: white;
+    font-family: "Monda", sans-serif;
+    font-size: 1.1rem;
+    text-align: center;
+    text-shadow: 0 0 10px black;
+}
+
+.portfolio-item figcaption a, .lightbox-caption a {
+    color: white;
+    text-decoration: underline;
+}
+
+.portfolio-item figcaption a:hover, .lightbox-caption a:hover {
+    opacity: 0.7;
 }

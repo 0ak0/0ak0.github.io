@@ -9,10 +9,12 @@
             '<button class="lightbox-close" aria-label="Close">&times;</button>' +
             '<button class="lightbox-prev" aria-label="Previous image">&#10094;</button>' +
             '<img class="lightbox-image" src="" alt="">' +
-            '<button class="lightbox-next" aria-label="Next image">&#10095;</button>';
+            '<button class="lightbox-next" aria-label="Next image">&#10095;</button>' +
+            '<p class="lightbox-caption"></p>';
         document.body.appendChild(overlay);
 
         var imageEl = overlay.querySelector('.lightbox-image');
+        var captionEl = overlay.querySelector('.lightbox-caption');
         var closeBtn = overlay.querySelector('.lightbox-close');
         var prevBtn = overlay.querySelector('.lightbox-prev');
         var nextBtn = overlay.querySelector('.lightbox-next');
@@ -21,6 +23,9 @@
         function show(index) {
             current = (index + links.length) % links.length;
             imageEl.src = links[current].getAttribute('href');
+            var figure = links[current].closest('figure');
+            var caption = figure && figure.querySelector('figcaption');
+            captionEl.innerHTML = caption ? caption.innerHTML : '';
         }
 
         function open(index) {
