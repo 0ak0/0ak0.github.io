@@ -85,6 +85,13 @@
     text-align: center;
 }
 
+.cover-subtitle {
+    max-width: min(60vw, 900px);
+    margin-left: auto;
+    margin-right: auto;
+    text-wrap: balance;
+}
+
 .cover-bgdarken {
     background: rgba(0, 0, 0, 0.15);
     position:fixed;
